@@ -3,6 +3,29 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 
 function App() {
+  const get = () => {
+    console.log('in get');
+
+    const status: Promise<number> = fetch('http://localhost:8000/api/a', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          console.error('err', response.status);
+          return response.status;
+        }
+
+        console.log('succeeded!', response.status, response.json());
+        return response.status;
+      })
+    
+    return status;
+  }
+
+
   const [count, setCount] = useState(0)
 
   return (
@@ -19,6 +42,9 @@ function App() {
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
+        </button>
+        <button onClick={() => get()}>
+          Request!
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
