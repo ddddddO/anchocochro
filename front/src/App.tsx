@@ -1,5 +1,14 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
+
+function TextInput(props) {
+  return (
+    <div>
+      <label>{props.title} : </label>
+      <input type='text'></input>
+    </div>
+  );
+}
 
 function Button(props) {
   return (
@@ -9,8 +18,7 @@ function Button(props) {
   );
 }
 
-
-function App() {
+function Form(props) {
   const get = () => {
     console.log('in get');
 
@@ -33,15 +41,22 @@ function App() {
     return status;
   }
 
+  return (
+    <div>
+      <TextInput title='単語/文章'></TextInput>
+      <TextInput title='説明'></TextInput>
+      <TextInput title='リンク'></TextInput>
 
-  const [count, setCount] = useState(0)
+      <Button onClick={() => get()} value='Request!!!'></Button>
+    </div>
+  )
+}
 
+function App() {
   return (
     <div className="App">
       <div className="card">
-        {/* count propsを設けるのは微妙... */}
-        <Button onClick={() => setCount((count) => count + 1)} value='count is ' count={count}></Button>
-        <Button onClick={() => get()} value='Request!!'></Button>
+        <Form></Form>
       </div>
     </div>
   )
