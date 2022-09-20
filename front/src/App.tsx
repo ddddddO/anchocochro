@@ -1,24 +1,10 @@
 // import { useState } from 'react'
 import './App.css'
 
-function TextInput(props) {
-  return (
-    <div>
-      <label>{props.title} : </label>
-      <input type='text'></input>
-    </div>
-  );
-}
+import TextInput from './TxtInput'
+import Button from './Button'
 
-function Button(props) {
-  return (
-    <button onClick={props.onClick}>
-      {props.value} {props.count}
-    </button>
-  );
-}
-
-function Form(props) {
+function Form() {
   const get = () => {
     console.log('in get');
 
