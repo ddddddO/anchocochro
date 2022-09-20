@@ -2,6 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
+function Button(props) {
+  return (
+    <button onClick={props.onClick}>
+      {props.value} {props.count}
+    </button>
+  );
+}
+
+
 function App() {
   const get = () => {
     console.log('in get');
@@ -40,19 +49,10 @@ function App() {
       </div>
       <h1>Vite + React + Chrome extensions</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <button onClick={() => get()}>
-          Request!
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        {/* count propsを設けるのは微妙... */}
+        <Button onClick={() => setCount((count) => count + 1)} value='count is ' count={count}></Button>
+        <Button onClick={() => get()} value='Request!!'></Button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }
