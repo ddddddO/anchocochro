@@ -1,4 +1,4 @@
-export default function TextInput(props) {
+export default function TextInput(props: any) {
   return (
     <div>
       <label>{props.title} : </label>

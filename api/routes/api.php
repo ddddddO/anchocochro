@@ -22,3 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/a', function() {
     return '{"aaa":"AAA"}';
 });
+Route::post('/a', function() {
+    return '{"bbb":"BBB"}';
+});
