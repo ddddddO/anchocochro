@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 
 import TextInput from './TxtInput'
@@ -27,7 +27,11 @@ function Form() {
     return status;
   }
 
-  const post = () => {
+  const [word, setWord] = useState('');
+  const [description, setDescription] = useState('');
+  const [link, setLink] = useState('');
+
+  const post = (word: string, description: string, link: string) => {
     console.log('in post');
 
     const status: Promise<number> = fetch('http://localhost:8000/api/a', {
@@ -35,6 +39,13 @@ function Form() {
       headers: {
         'Content-Type': 'application/json'
       },
+      body: JSON.stringify(
+        {
+          word: word,
+          description: description,
+          link: link,
+        }
+      ),
     })
       .then((response) => {
         if (!response.ok) {
@@ -51,12 +62,15 @@ function Form() {
 
   return (
     <div>
-      <TextInput title='単語/文章'></TextInput>
-      <TextInput title='説明'></TextInput>
-      <TextInput title='リンク'></TextInput>
+      <p>WORD: {word}</p>
+      <p>DESCRIPTION: {description}</p>
+      <p>LINK: {link}</p>
+      <TextInput title='単語/文章' onChange={setWord}></TextInput>
+      <TextInput title='説明' onChange={setDescription}></TextInput>
+      <TextInput title='リンク' onChange={setLink}></TextInput>
 
       <Button onClick={() => get()} value='Get!'></Button>
-      <Button onClick={() => post()} value='Post!'></Button>
+      <Button onClick={() => post(word, description, link)} value='Post!'></Button>
     </div>
   )
 }

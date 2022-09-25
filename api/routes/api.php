@@ -22,6 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 # for React to Laravel api
 Route::resource('/a', AnchocoController::class);
-Route::post('/a', function() {
-    return '{"bbb":"BBB"}';
-});
+// Route::post('/a', function() {
+//     return '{"bbb":"BBB"}';
+// });

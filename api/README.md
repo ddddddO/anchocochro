@@ -16,6 +16,9 @@
 - `php artisan make:controller AnchocoController --resource`
 - routes/api.php
 
+- refs
+  - https://readouble.com/laravel/8.x/ja/requests.html
+
 ## [Eloquent](https://readouble.com/laravel/8.x/ja/eloquent.html)
 - `php artisan make:model Word`
 
