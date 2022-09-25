@@ -1,8 +1,15 @@
 # 実行コマンド
+## マイグレーション(https://readouble.com/laravel/8.x/ja/migrations.html)
 - `php artisan make:migration create_words_table` : マイグレーション用スクリプトの雛形生成
 
 - `php artisan migrate` : マイグレーション実行
   - `sudo apt install php7.4-sqlite3` : sqlite3ドライバインストール
+
+
+## [シーディング](https://readouble.com/laravel/8.x/ja/seeding.html)
+- `php artisan make:seeder InitDataSeeder` : シーダーファイルの生成
+- シーダーファイルの登録 : database/seeders/DatabaseSeeder.phpに、作成したシーダーファイルを追記する。
+- `php artisan db:seed` : シーディングの実行
 
 
 ---
