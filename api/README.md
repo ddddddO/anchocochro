@@ -16,6 +16,12 @@
 - `php artisan make:controller AnchocoController --resource`
 - routes/api.php
 
+## [Eloquent](https://readouble.com/laravel/8.x/ja/eloquent.html)
+- `php artisan make:model Word`
+
+- refs
+  - https://readouble.com/laravel/8.x/ja/eloquent-serialization.html
+
 # 参考
 - PHPフレームワーク Laravel入門 第2版
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Word;
+
 class AnchocoController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class AnchocoController extends Controller
      */
     public function index()
     {
-        return '{"words": ["anchoco"]}';
+        $words = Word::all();
+        return $words;
     }
 
     /**
