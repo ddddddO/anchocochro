@@ -18,7 +18,20 @@ class AnchocoController extends Controller
      */
     public function index()
     {
+        Log::debug('AnchocoController.index');
+
         $words = Word::all();
+        foreach ($words as $word) {
+            Log::debug('WORD: '.$word->value);
+
+            foreach ($word->descriptions as $description) {
+                Log::debug('    DESCRIPTION: '.$description->value);
+            }
+            foreach ($word->links as $link) {
+                Log::debug('    LINK: '.$link->value);
+            }
+        }
+
         return $words;
     }
 

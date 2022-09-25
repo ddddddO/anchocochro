@@ -24,6 +24,7 @@
 
 - refs
   - https://readouble.com/laravel/8.x/ja/eloquent-serialization.html
+  - https://readouble.com/laravel/8.x/ja/eloquent-relationships.html
 
 # 参考
 - PHPフレームワーク Laravel入門 第2版
