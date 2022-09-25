@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AnchocoController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,9 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 # for React to Laravel api
-Route::get('/a', function() {
-    return '{"aaa":"AAA"}';
-});
+Route::resource('/a', AnchocoController::class);
 Route::post('/a', function() {
     return '{"bbb":"BBB"}';
 });

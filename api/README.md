@@ -11,6 +11,13 @@
 - シーダーファイルの登録 : database/seeders/DatabaseSeeder.phpに、作成したシーダーファイルを追記する。
 - `php artisan db:seed` : シーディングの実行
 
+## [コントローラ](https://readouble.com/laravel/8.x/ja/controllers.html)
+### リソースコントローラ
+- `php artisan make:controller AnchocoController --resource`
+- routes/api.php
+
+# 参考
+- PHPフレームワーク Laravel入門 第2版
 
 ---
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
