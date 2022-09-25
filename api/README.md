@@ -1,3 +1,11 @@
+# 実行コマンド
+- `php artisan make:migration create_words_table` : マイグレーション用スクリプトの雛形生成
+
+- `php artisan migrate` : マイグレーション実行
+  - `sudo apt install php7.4-sqlite3` : sqlite3ドライバインストール
+
+
+---
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
