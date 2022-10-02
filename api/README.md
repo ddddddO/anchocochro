@@ -1,4 +1,4 @@
-# 実行コマンド
+# ドキュメントや実行コマンド
 ## マイグレーション(https://readouble.com/laravel/8.x/ja/migrations.html)
 - `php artisan make:migration create_words_table` : マイグレーション用スクリプトの雛形生成
 
@@ -28,6 +28,13 @@
 
 ## [バリデーション](https://readouble.com/laravel/8.x/ja/validation.html)
 
+## [テスト](https://readouble.com/laravel/8.x/ja/testing.html)
+- 初めて `php artisan test` を実行すると以下エラーになったので、`sudo apt install php-mbstring` を実行すると、テスト成功する(WSL/Debianにて)。
+  ```
+  PHPUnit requires the "mbstring" extension.
+  ```
+
+- **WIP まだ自分でテスト書いてない**
 
 # 参考
 - PHPフレームワーク Laravel入門 第2版
