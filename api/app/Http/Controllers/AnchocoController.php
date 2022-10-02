@@ -55,6 +55,15 @@ class AnchocoController extends Controller
     {
         Log::debug('AnchocoController store');
 
+        // TODO: linkのprefixが http:// or https:// であることチェックを設ける
+        // TODO: jsonをpostされるが、jsonがバリデーションエラーの場合、htmlを返すため、以下のように、バリデーションエラー時にjsonをレスポンスするようにする
+        //       https://qiita.com/apricotcomic/items/eaae832338a67e1ccf2a
+        $validated = $request->validate([
+            'word' => ['required'],
+            'description' => ['required'],
+            // 'link' => [''],
+        ]);
+
         $rawWord = $request->input('word');
         $rawDescription = $request->input('description');
         $rawLink = $request->input('link');
